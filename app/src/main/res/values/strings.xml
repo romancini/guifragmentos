@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GUI com Fragmentos</string>
+    <string name="mensagem_carregando">Aguarde enquanto a app é carregada</string>
+    <string name="fragmento_1">Fragmento 1</string>
+    <string name="fragmento_2">Fragmento 2</string>
+    <string name="abrir_drawer">Abrir menu</string>
+    <string name="fechar_drawer">Fechar menu</string>
+    <string-array name="lista_menu">
+        <item>Fragmento 1</item>
+        <item>Fragmento 2</item>
+    </string-array>
+</resources>
