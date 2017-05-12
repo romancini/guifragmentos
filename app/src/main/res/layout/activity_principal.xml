@@ -6,7 +6,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/content_frame"></FrameLayout>
+        android:id="@+id/content_frame" />
     <ListView
         android:layout_width="240dp"
         android:layout_height="match_parent"
@@ -15,6 +15,10 @@
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
-        android:background="#FFF"></ListView>
+        android:background="#FFF" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teste branch exercicio01"/>
 
 </android.support.v4.widget.DrawerLayout>
