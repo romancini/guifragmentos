@@ -29,8 +29,12 @@ public class PrincipalActivity extends AppCompatActivity implements AdapterView.
                 getResources().getStringArray(R.array.lista_menu)));
         drawerList.setOnItemClickListener(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, null,
-                R.string.abrir_drawer, R.string.fechar_drawer);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(
+                this,
+                drawerLayout,
+                null,
+                R.string.abrir_drawer,
+                R.string.fechar_drawer);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame,

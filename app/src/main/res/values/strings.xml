@@ -5,6 +5,9 @@
     <string name="fragmento_2">Fragmento 2</string>
     <string name="abrir_drawer">Abrir menu</string>
     <string name="fechar_drawer">Fechar menu</string>
+    <string name="senha">Senha</string>
+    <string name="usuario">Usuário</string>
+    <string name="nome_completo">Nome Completo</string>
     <string-array name="lista_menu">
         <item>Fragmento 1</item>
         <item>Fragmento 2</item>
