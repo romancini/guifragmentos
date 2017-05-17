@@ -35,8 +35,12 @@ public class Fragmento1Fragment extends Fragment {
         cadastroButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Fragmento2Fragment f2 = new Fragmento2Fragment();
+                Bundle args = new Bundle();
+                args.putString("id", "1");
+                f2.setArguments(args);
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new Fragmento2Fragment());
+                ft.replace(R.id.content_frame, f2);
                 ft.commit();
             }
         });
