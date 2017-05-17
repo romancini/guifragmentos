@@ -35,5 +35,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/et_senha"
         android:inputType="textPassword"/>
+    <Button
+        android:id="@+id/btn_cadastro_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar"
+        android:textAlignment="center"/>
 
 </LinearLayout>

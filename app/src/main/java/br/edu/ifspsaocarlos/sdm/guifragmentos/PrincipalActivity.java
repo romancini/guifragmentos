@@ -64,9 +64,10 @@ public class PrincipalActivity extends AppCompatActivity implements AdapterView.
         actionBarDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    public boolean onOptionItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item){
         if (actionBarDrawerToggle.onOptionsItemSelected(item))
-            return true;
-        return super.onOptionsItemSelected(item);
+            return actionBarDrawerToggle.onOptionsItemSelected(item);
+        else
+            return super.onOptionsItemSelected(item);
     }
 }

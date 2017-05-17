@@ -8,6 +8,7 @@
     <string name="senha">Senha</string>
     <string name="usuario">Usuário</string>
     <string name="nome_completo">Nome Completo</string>
+    <string name="cadastrar">Cadastrar</string>
     <string-array name="lista_menu">
         <item>Fragmento 1</item>
         <item>Fragmento 2</item>
