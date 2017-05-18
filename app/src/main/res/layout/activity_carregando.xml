@@ -5,6 +5,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_ifsp"/>
+        android:src="@drawable/logo_ifsp"
+        android:contentDescription="@string/imagem_com_o_logo_do_ifsp"/>
 
 </LinearLayout>

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -19,9 +20,7 @@ import android.widget.EditText;
  */
 public class Fragmento1Fragment extends Fragment {
     private DatabaseHelper helper;
-    private EditText nome;
-    private EditText usuario;
-    private EditText senha;
+    private String nome, usuario, senha;
 
     public static Fragmento1Fragment newInstance(Context context) {
         Fragmento1Fragment fragment = new Fragmento1Fragment();
@@ -43,18 +42,20 @@ public class Fragmento1Fragment extends Fragment {
             public void onClick(View v){
                 Fragmento2Fragment f2 = new Fragmento2Fragment();
                 Bundle args = new Bundle();
-                nome = (EditText) view.findViewById(R.id.et_nome);
-                usuario = (EditText) view.findViewById(R.id.et_usuario);
-                senha = (EditText) view.findViewById(R.id.et_senha);
-                long id = salvarUsuario(
-                        nome.getText().toString(),
-                        usuario.getText().toString(),
-                        senha.getText().toString());
-                args.putString("id", Long.toString(id));
-                f2.setArguments(args);
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, f2);
-                ft.commit();
+                nome = ((EditText) view.findViewById(R.id.et_nome)).getText().toString();
+                usuario = ((EditText) view.findViewById(R.id.et_usuario)).getText().toString();
+                senha = ((EditText) view.findViewById(R.id.et_senha)).getText().toString();
+                long id = salvarUsuario(nome, usuario, senha);
+                if (id > 0) {
+                    args.putString("id", Long.toString(id));
+                    args.putString("nome", nome);
+                    args.putString("usuario", usuario);
+                    args.putString("senha", senha);
+                    f2.setArguments(args);
+                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.content_frame, f2);
+                    ft.commit();
+                }
             }
         });
 
@@ -64,17 +65,17 @@ public class Fragmento1Fragment extends Fragment {
     private long salvarUsuario(String nome, String usuario, String senha){
         long resultado = 0;
         try {
+            helper = new DatabaseHelper(getActivity());
             SQLiteDatabase db = helper.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("nome_completo", nome);
             values.put("usuario", usuario);
             values.put("senha", senha);
             resultado = db.insert("usuarios", null, values);
+            Toast.makeText(getActivity(), "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
+            Toast.makeText(getActivity(), "Erro ao cadastrar", Toast.LENGTH_SHORT).show();
             System.out.println("erro: " + e);
-            System.out.println("nome: " + nome);
-            System.out.println("usuario: " + usuario);
-            System.out.println("senha: " + senha);
         }
 
         return resultado;

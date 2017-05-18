@@ -1,13 +1,24 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_fragmento_2"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/fragmento_2" />
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1">
 
-
-</LinearLayout>
+        <TableRow>
+            <TextView android:text="@string/id"/>
+            <TextView android:id="@+id/tv_id_frag2"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/nome_completo"/>
+            <TextView android:id="@+id/tv_nome_frag2"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/usuario"/>
+            <TextView android:id="@+id/tv_usuario_frag2"/>
+        </TableRow>
+    </TableLayout>
+</ScrollView>

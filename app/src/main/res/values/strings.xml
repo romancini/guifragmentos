@@ -13,4 +13,6 @@
         <item>Fragmento 1</item>
         <item>Fragmento 2</item>
     </string-array>
+    <string name="id">Id</string>
+    <string name="imagem_com_o_logo_do_ifsp">imagem_logo_ifsp</string>"
 </resources>

@@ -31,8 +31,14 @@ public class Fragmento2Fragment extends Fragment {
 
         Bundle args = getArguments();
         String id = args.getString("id");
-        final TextView tv = (TextView) view.findViewById(R.id.tv_fragmento_2);
-        tv.setText(id);
+        String nome = args.getString("nome");
+        String usuario = args.getString("usuario");
+        final TextView tvId = (TextView) view.findViewById(R.id.tv_id_frag2);
+        final TextView tvNome = (TextView) view.findViewById(R.id.tv_nome_frag2);
+        final TextView tvUsuario = (TextView) view.findViewById(R.id.tv_usuario_frag2);
+        tvId.setText(id);
+        tvNome.setText(nome);
+        tvUsuario.setText(usuario);
 
         return view;
     }
